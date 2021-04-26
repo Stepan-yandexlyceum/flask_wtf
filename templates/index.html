@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% set profession = ['врач', 'климатолог', 'спортсмен'] %}
-{% if prof == 'инженер' or prof == 'строитель'%}
-<img src="/static/img/it2.jpg" alt="тут должна быть картинка">
-{% elif prof in profession %}
-<p>Тут нет картинки</p>
-{% else %}
-<p>вы не допущены</p>
+{% set profes = ['врач', 'инженер', 'космоиследователь', 'пилот', 'уборщица', 'плантатор', 'хирург'] %}
+{% for i in profes %}
+    <{{list}}>
+    <li>{{i}}</li>
+    </{{list}}>
+{% endfor %}
 {% endif %}
 {% endblock %} 
