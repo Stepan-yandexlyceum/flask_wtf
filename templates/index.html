@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Размещение по каютам</h1>
-{% set quote = 'Каюта №' %}
-    {% for user in people %}
-        <p>{{ user }} - {{ quote }}{{ loop.index }} {% if loop.first %} - капитан корабля {% endif %}</p>
-{% endfor %}
+{% set profession = ['врач', 'климатолог', 'спортсмен'] %}
+{% if prof == 'инженер' or prof == 'строитель'%}
+<img src="/static/img/ship.jpg" alt="тут должна быть картинка">
+{% elif prof in profession %}
+<p>Тут нет картинки</p>
+{% else %}
+<p>вы не допущены</p>
 {% endif %}
-{% endblock %} 
+{% endblock %}
