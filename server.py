@@ -23,5 +23,17 @@ def login():
     return render_template('index.html')
 
 
+@app.route('/distribution')
+def distribution():
+    human = ['human1', 'human2', 'human3',
+             'human4', 'human5', 'human6']
+    return render_template('index.html', people=human)
+
+
+@app.route('/table/<sex>/<year>')
+def table(sex, year):
+    return render_template('index.html', sex=sex, year=year)
+
+
 if __name__ == '__main__':
     app.run(port=5000, host='127.0.0.1')
